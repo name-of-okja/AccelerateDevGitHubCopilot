@@ -208,5 +208,8 @@ public class JsonData
             return await JsonSerializer.DeserializeAsync<T>(jsonStream);
         }
     }
-
+    public Book? SearchBookByTitle(string title)
+    {
+        return Books?.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+    }
 }
